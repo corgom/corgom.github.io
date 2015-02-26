@@ -1,3 +1,8 @@
 body {
     /*background-image: url("img/back-colores.png");*/
+    width: 760px;
+}
+
+span.em {
+    background-color: yellow;
 }
