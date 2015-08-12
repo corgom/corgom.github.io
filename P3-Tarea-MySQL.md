@@ -16,7 +16,7 @@ Tenemos dos tablas SQL:
 
 ---
 
-* Usuario
+* `usuario`
 
   Tipo llave | Columna | Tipo dato
   -----------:|---------|----------
@@ -25,7 +25,7 @@ Tenemos dos tablas SQL:
     | nombre | VARCHAR(100)
     | email | VARCHAR(100)
 
-* *Articulo*
+* `articulo`
 
   Tipo llave | Columna | Tipo dato
   -----------:|---------|----------
