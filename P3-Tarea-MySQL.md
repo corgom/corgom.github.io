@@ -21,19 +21,19 @@ Tenemos dos tablas SQL:
   Tipo llave | Columna | Tipo dato
   -----------:|---------|----------
   **PK** | usuario | varchar(20)
-   | contrasena | varchar(20)
-   | nombre | varchar(100)
-   | email | varchar(100)
+    | contrasena | varchar(20)
+    | nombre | varchar(100)
+    | email | varchar(100)
 
-* **Articulo**
+* *Articulo*
 
   Tipo llave | Columna | Tipo dato
   -----------:|---------|----------
   PK|id| int
   FK|usuarioCrea| varchar(20)
-   |fechaCreacion| datetime
-   |titulo| varchar(200)
-   |texto|varchar(2000)
+    |fechaCreacion| datetime
+    |titulo| varchar(200)
+    |texto|varchar(2000)
  
 ---
 
