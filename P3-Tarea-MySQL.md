@@ -20,20 +20,20 @@ Tenemos dos tablas SQL:
 
   Tipo llave | Columna | Tipo dato
   -----------:|---------|----------
-  **PK** | usuario | varchar(20)
-    | contrasena | varchar(20)
-    | nombre | varchar(100)
-    | email | varchar(100)
+  **PK** | ***usuario*** | VARCHAR(20)
+    | contrasena | VARCHAR(20)
+    | nombre | VARCHAR(100)
+    | email | VARCHAR(100)
 
 * *Articulo*
 
   Tipo llave | Columna | Tipo dato
   -----------:|---------|----------
-  PK|id| int
-  FK|usuarioCrea| varchar(20)
-    |fechaCreacion| datetime
-    |titulo| varchar(200)
-    |texto|varchar(2000)
+  **PK** |id | INT NOT NULL AUTO_INCREMENT
+  **FK** |***usuarioCrea*** | VARCHAR(20)
+    | fechaCreacion | DATETIME
+    | titulo | VARCHAR(200)
+    | texto | VARCHAR(2000)
  
 ---
 
