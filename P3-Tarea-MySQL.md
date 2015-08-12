@@ -8,5 +8,4 @@
 1. Cuál de los tres métodos de conexión es el más recomendable y por qué
 
 ## 2. PHP-MySQL
-5. Escribe un ejemplo de conexion válida a una base de datos MySQL usando **`PHP`** y **`MySQLi`**
-6. 
+1. Escribe un ejemplo de conexion válida a una base de datos MySQL usando **`PHP`** y **`MySQLi`**
