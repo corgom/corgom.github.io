@@ -12,12 +12,14 @@
 1. Abrir en navegador web (firefox o chrome) tu sitio web, que será
     la url [http://localhost/cms/](http://localhost/cms/)
 1. Abrir en otra pestaña del navegador la interfaz web para MySQL <a href="http://localhost/phpmyadmin/">phpMyAdmin</a>
+1. Bajar <a href="">archivo php</a> que crea la base de datos y tablas basicas para nuestro sitio web
+   1. Ejecutar el script en una pestaña nueva en el navegador web (p.e. http://localhost/cms/create-db-cms.php)
 
 ## MySQLi
 
 De las 3 APIs disponibles para conectarse a MySQL desde PHP vamos a usar **mysqli**
 
-codigo de conexion valida php a mysql
+Veamos primero codigo de conexion valida php a mysql:
 
 ```php
 <?php
@@ -53,5 +55,6 @@ $result->free();
 
 ?>
 ```
+
 
 
