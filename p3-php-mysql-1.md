@@ -13,7 +13,7 @@
     la url [http://localhost/cms/](http://localhost/cms/)
 1. Abrir en otra pestaña del navegador la interfaz web para MySQL <a href="http://localhost/phpmyadmin/">phpMyAdmin</a>
 1. Bajar <a href="">archivo php</a> que crea la base de datos y tablas basicas para nuestro sitio web
-   1. Ejecutar el script en una pestaña nueva en el navegador web (p.e. http://localhost/cms/create-db-cms.php)
+   1. Ejecutar el script en una pestaña nueva en el navegador web (p.e. http://localhost/cms/install-db-cms.php)
 
 ## MySQLi
 
@@ -24,7 +24,7 @@ Veamos primero codigo de conexion valida php a mysql:
 ```php
 <?php
 
-$db = new mysqli('localhost', 'root', '', 'cms'); //con indicacion de nombre de base de datos
+$db = new mysqli('localhost', 'root', '', 'cmsblog'); //con indicacion de nombre de base de datos
 //$db = new mysqli('localhost', 'root', ''); //sin indicacion de nombre de base de datos
 
 if($db->connect_errno > 0){
