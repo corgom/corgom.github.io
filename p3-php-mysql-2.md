@@ -1,3 +1,6 @@
+http://ben.balter.com/2015/01/11/hacking-github/
+http://htmledit.squarefree.com/
+
 ## *Ejercicio clase*
 
 # HTML FORM > PHP > MySQL
@@ -21,12 +24,6 @@
 
 <table border="1">
 <tr><td>
-  <h1>Articulo nuevo</h1>
-  <form method="post" action="articulo_guarda.php">
-    <label>Titulo:</label><input type="text" id="titulo" name="titulo" />
-    <label>texto:</label><textarea name="texto"></textarea>
-    <label>Tags:</label><input type ="text" name="tags" />
-    <button type="submit">Guardar</button>
-  </form>
+  
 </td></tr>
 </table>
