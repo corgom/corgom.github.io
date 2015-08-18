@@ -83,10 +83,6 @@ Usando como referencia la consulta a la base de datos MySQL que se hizo en `./ad
 donde dice `[Titulo del articulo]`, `[Autor del articulo]` y `[texto del articulo]` ahí debe aparecer los valores recuperados de la base de datos.
 
 
-### Sitios de interes
-
-1. [introHtml]
-
 
 [1]: https://filezilla-project.org/ "FileZilla"
 [2]: https://cyberduck.io/?l=es "CyberDuck"
