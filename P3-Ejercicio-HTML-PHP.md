@@ -2,7 +2,7 @@
 
 # Ejercicio
 
-**Keywords**: [HTML5][html5], form, input, post, PHP, ftp, website, url, $_POST[], issset(), MySQL, SQL
+**Keywords**: [HTML5][html5], form, input, post, PHP, ftp, website, url, $_POST[], issset(), [mysqli][mysqli], SQL
 
 ## Objetivo
 
@@ -92,3 +92,4 @@ donde dice `[Titulo del articulo]`, `[Autor del articulo]` y `[texto del articul
 [2]: https://cyberduck.io/?l=es "CyberDuck"
 [introHtml]: http://www.desarrolloweb.com/manuales/21/ "Intro HTML"
 [html5]: http://www.axtro.es/2011/1/29/12236/manual-de-html5-en-espanol---1-de-3 "HTML 5"
+[mysqli]: http://codular.com/php-mysqli "MySQL > mysqli"
