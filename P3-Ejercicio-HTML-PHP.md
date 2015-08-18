@@ -2,7 +2,7 @@
 
 # Ejercicio
 
-**Keywords**: HTML5, form, input, post, PHP, ftp, website, url, $_POST[], issset(), MySQL, SQL
+**Keywords**: [HTML5][html5], form, input, post, PHP, ftp, website, url, $_POST[], issset(), MySQL, SQL
 
 ## Objetivo
 
@@ -83,7 +83,6 @@ Usando como referencia la consulta a la base de datos MySQL que se hizo en `./ad
 donde dice `[Titulo del articulo]`, `[Autor del articulo]` y `[texto del articulo]` ahí debe aparecer los valores recuperados de la base de datos.
 
 
-* url online: 
 ### Sitios de interes
 
 1. [introHtml]
@@ -92,3 +91,4 @@ donde dice `[Titulo del articulo]`, `[Autor del articulo]` y `[texto del articul
 [1]: https://filezilla-project.org/ "FileZilla"
 [2]: https://cyberduck.io/?l=es "CyberDuck"
 [introHtml]: http://www.desarrolloweb.com/manuales/21/ "Intro HTML"
+[html5]: http://www.axtro.es/2011/1/29/12236/manual-de-html5-en-espanol---1-de-3 "HTML 5"
