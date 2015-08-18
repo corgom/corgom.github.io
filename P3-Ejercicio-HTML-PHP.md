@@ -6,7 +6,7 @@
 
 ## Objetivo
 
-Repasar los conceptos y ejercicios ya vistos en clase para concluir el armado o maquetado de un sitio web funcional online para publicar articulos de un blog.
+Repasar los conceptos y ejercicios ya vistos en clase para concluir el armado o maquetado de un sitio web funcional online para publicar articulos de un blog, aplicando los conocimientos adquiridos teoricamente y mediante practicas del tema relacionado a *Desarrollo de aplicaciones web usando HTML, PHP y MySQL*.
 
 ## Instrucciones
 
