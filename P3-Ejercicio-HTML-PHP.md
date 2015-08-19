@@ -1,44 +1,54 @@
-# Desarrollo de aplicaciones web
+### Desarrollo de aplicaciones web
 
-# Ejercicio
+# Ejercicios prácticos
 
-**Keywords**: [HTML5][html5], form, input, post, PHP, ftp, website, url, $_POST[ ], issset(), [mysqli][mysqli], SQL
+**Keywords**: [`HTML5`][html5], `form`, `input`, `post`, `PHP`, `ftp`, `website`, `url`, `$_POST[]`, `issset()`, [`mysqli`][mysqli], `SQL`
 
 ## Objetivo
 
-Repasar y aplicar los conceptos y ejercicios ya vistos en clase respecto al tema *Desarrollo de aplicaciones web usando HTML, PHP y MySQL* para avanzar el armado o maquetado de un sitio web funcional online para publicar articulos de un blog.
+Aplicar los conceptos y ejercicios vistos en clase sobre el tema *Desarrollo de aplicaciones web usando HTML, PHP y MySQL*, para publicar un sitio web funcional que permite crear un blog.
 
 ## Instrucciones
 
 Realiza cada unos de los pasos de forma incremental segun se te indica.
 
-La conexion ftp lo puedes hacer con el cliente ftp de tu preferencia ([FileZilla][1], [CyberDuck][2], etc.). Ya se te proporcionó con anterioridad la información para hacer la conexión a tu sitio ftp, los datos mínimos requeridos son: **url del ftp** (host), **puerto**(default: 21) (port), **usuario** (user) y **contraseña** (password).
+La conexion ftp lo puedes hacer con el cliente ftp de tu preferencia ([FileZilla][1], [CyberDuck][2], etc.). Ya se te proporcionó con anterioridad la información para hacer la conexión a tu sitio ftp, los datos mínimos requeridos son: **url del ftp** o *host*, **puerto** o *port* (default: 21), **usuario** o *user* y **contraseña** o *password*.
 
-Tienes una carpeta local (en tu disco duro o USB) llamada `cms`  o `cmsblog` que debe contener lo ultimo que trabajamos en clase, a esta carpeta de ahora en adelante la llamaremos `CARPETA DE TRABAJO`. Y tienes un carpeta remota ftp que llamaremos `CARPETA PUBLICA`, lo que subas a esa carpeta ftp la puedes ver via un navegador web, apuntado a ella correctamente (más adelante la explicación de como hacer esto).
+### CARPETA DE TRABAJO
 
-## Ejercicios que vas a realizar
+Tienes una carpeta local (en tu disco duro o USB) llamada `cms`  o `cmsblog` que debe contener lo ultimo que trabajamos en clase, a esta carpeta de ahora en adelante la llamaremos **`CARPETA DE TRABAJO`** (que es la carpeta que copiabamos a la ruta `.\wamp\www\` y podíamos visualizar en `http://localhost/cms` usando WAMP).
+
+### CARPETA PUBLICA
+
+Y tienes un carpeta remota ftp que llamaremos **`CARPETA PUBLICA`**. Esta es la carpeta que ves cuando te conectas al servidor ftp, cuyos datos de conexion se te proporcionó en alguna de las clases. Lo que subas a esta carpeta lo puedes ver vía navegador web, apuntado a ella correctamente:
+
+```
+http://[ip]/~corne/[usuario_ftp_sin_@]
+```
+
+donde `[usuario_ftp_sin_@]` se corresponde con tu usuario ftp pero sin incluir la arroba y lo que viene despues, por ejemplo para ver el sitio web de Jonatan escribimos en el navegador:
+
+```
+http://[ip]/~corne/jmunoz
+```
+
+![Imgur](http://i.imgur.com/t3MUla6.png)
+
+En el url anterior, unicamente falta sustituir `[ip]` que se corresponde con la IP del servidor ftp mencionado anteriormente.
+
+A la url de tu sitio web le llamaremos de ahora en adelante `WEB SITE`.
+   
+## Ejercicios
 
 ### ./install.php
 
-1. Borra todo el contenido que tenga tu directorio FTP o `CARPETA PUBLICA`, y sube el *contenido* de tu `CARPETA DE TRABAJO` a dicha `CARPETA PUBLICA`.
-   Una vez hecho lo anterior, debes poder visitar tu sitio web apuntando a tu carpeta publica vía http (en vez ftp), que será fiel reflejo de lo que tienes en tu `CARPETA DE TRABAJO` (y que puedes visualizar localmente usando WAMP):
+1. Borra todo el contenido de tu `CARPETA PUBLICA`, y sube el **contenido** de tu `CARPETA DE TRABAJO` a dicha `CARPETA PUBLICA`.
+   Una vez hecho lo anterior, visita tu `WEB SITE`, esté será reflejo fiel de tu `CARPETA DE TRABAJO` visto en un navegador web.
 
-   ```
-   http://[ip_sitio_web]/~corne/[usuario_ftp_sin_@]
-   ```
+2. Baja el archivo php [`install.php`][install.php] a tu `CARPETA DE TRABAJO`, como ya existe un archivo con el mismo nombre, sobre escribe el existente, ya que este nuevo archivo `install.php` tiene algunas correciones respecto al original.
 
-   donde `[usuario_ftp_sin_@]` se corresponde con tu usuario ftp sin la arroba, por ejemplo para ver el sitio web de Jonatan tendríamos:
-
-   ```
-   http://[ip_sitio_web]/~corne/jmunoz
-   ```
-
-   En lo anterior, unicamente falta sustituir `[ip_sitio_web]` que se corresponde con la IP del ftp de tu `CARPETA PUBLICA`. 
-
-2. Ahora baja el [siguiente archivo][install.php] a tu `CARPETA DE TRABAJO`
-
-3. Instala/crea la base de datos requerido por tu sitio web usando el archivo `./install.php` 
-    1. Actualiza la sección de configuracion de conexion a tu base de datos MySQL en el archivo `./install.php` con tus datos de conexion:
+3. Instala o crea las tablas que va a requerir tu sitio web usando el archivo `./install.php` recien bajado.
+    1. Actualiza la sección de configuracion de conexion a tu base de datos MySQL en el archivo `./install.php` con tus datos de conexion. Actualmente esa parte contiene esta información:
     
        ```php
         if (isset($_POST["install"])){
@@ -51,7 +61,7 @@ Tienes una carpeta local (en tu disco duro o USB) llamada `cms`  o `cmsblog` que
             ...
        ```
        
-       Los datos de conexion usuario actualizados queda como sigue:
+       Los parametros de conexion actualizados con tus datos queda como sigue:
 
        ```php
         if (isset($_POST["install"])){
@@ -81,9 +91,9 @@ Tienes una carpeta local (en tu disco duro o USB) llamada `cms`  o `cmsblog` que
 
        Obvio, el password no es el real.
 
-       Asegurate que los datos son correctos. Si te marca error alguno de los siguientes pasos, regresa a este punto y revisa que todo esté correctamente.
+       Asegurate que los datos estén correctos. Si te marca error alguno de los ejercicios posteriores, regresa a este punto y revisa que tus datos estén correctos.
 
-    2. Para ejecutar la instalacion, hay que *correr* el php `./install.php` en el servidor (usando su url completa) para que se realice la creación de la base de datos, tablas y datos de carga inicial, como lo hicimos en clase, la diferencia ahora es que no es `http://localhost/cmsblog/install.php`, sino que hay que apuntar ahora a la url correspondiente: `http://[ip_sitio_web]/~corne/[usuario_ftp_sin_@]/install.php`
+    2. Para ejecutar la instalacion, hay que *correr* el php `./install.php` en el servidor (usando su url completa) para que se realice la creación de la base de datos, tablas y datos de carga inicial, como lo hicimos en clase, la diferencia ahora es que no es `http://localhost/cmsblog/install.php`, sino que hay que apuntar ahora a la url correspondiente: `http://[ip]/~corne/[usuario_ftp_sin_@]/install.php`
     3. Ahora valida que la base de datos se haya creado correctamente:
         1. Actualiza la configuracion de la conexion a la base de datos MySQL en el archivo `./admin.php`, usa los mismos datos de conexión a MySQL que usaste en `./install.php`:
 
@@ -98,33 +108,53 @@ Tienes una carpeta local (en tu disco duro o USB) llamada `cms`  o `cmsblog` que
         }
         ```
 
-        2. Ahora ve a tu sitio web `http://[ip_sitio_web]/~corne/[usuario_ftp_sin_@]/` y logueate en la correspondiente pantalla de *login*.
+        2. Ahora ve a tu sitio web `http://[ip]/~corne/[usuario_ftp_sin_@]/` y logueate en la correspondiente pantalla de *login*.
         3. Si tu login fue exitoso, este debe redirigirte a la pagina `./admin.php` en donde deberás ver el listado de articulos publicados por cada autor, **que fue hasta donde llegamos en la ultima clase**.
         
 ### ./admin.php
 
-En `./admin.php` actualmente generamos con php una tabla html que contiene los datos consultados de nuestra base de datos. El codigo html generado por php debe ser parecido a (quizás varie en los saltos de linea, pero los tags deben generarse en el orden indicado):
+En `./admin.php` actualmente generamos con php una tabla html que contiene los datos consultados de la tabla `articulo`, y mostramos dos columnas que son `id` y `titulo`. El codigo html generado por php debe ser parecido a (quizás varie en los saltos de linea, pero los tags deben generarse en el orden indicado):
 
 ```html
 <table>
     <tr>
-        <td>aut1</td>
-        <td>.</td>
-        <td>.</td>
+        <td>1</td>
+        <td>silicon valley</td>
     </tr>
     <tr>
-        <td>aut2</td>
-        <td>.</td>
-        <td>.</td>
+        <td>2</td>
+        <td>ipad</td>
     </tr>
     ...
     <tr>
-        <td>aut3</td>
-        <td>.</td>
-        <td>.</td>
+        <td>15</td>
+        <td>cazafantasmas</td>
     </tr>
 </table>
 ```
+
+Si tu salida html no es así, corrige o completa tu fuente `./admin.php` para que tenga la salida de tags como se indicó anteriormente.
+
+1. El ejercicio consiste en modificar el fuente `./admin.php` de manera que la salida html ahora sea:
+
+   ```html
+   <table>
+       <tr>
+           <td>1</td>
+           <td> <a href="articulo_edita.php?id=1"> silicon valley </a> </td>
+       </tr>
+       <tr>
+           <td>2</td>
+           <td> <a href="articulo_edita.php?id=2"> ipad </a> </td>
+       </tr>
+       ...
+       <tr>
+           <td>15</td>
+           <td> <a href="articulo_edita.php?id=15"> cazafantasmas </a> </td>
+       </tr>
+   </table>
+   ```
+
 
 ### IMG encabezado
 
@@ -155,4 +185,4 @@ donde dice `[Titulo del articulo]`, `[Autor del articulo]` y `[texto del articul
 [introHtml]: http://www.desarrolloweb.com/manuales/21/ "Intro HTML"
 [html5]: http://www.axtro.es/2011/1/29/12236/manual-de-html5-en-espanol---1-de-3 "HTML 5"
 [mysqli]: http://codular.com/php-mysqli "MySQL > mysqli"
-[install.php]: 
+[install.php]: http://corgom.github.io/resources/install.php "Install PHP-MySQL"
