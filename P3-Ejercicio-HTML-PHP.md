@@ -157,15 +157,6 @@ Si tu salida html no es así, corrige o completa tu fuente `./admin.php` para qu
    </table>
    ```
 
-
-### IMG encabezado
-
-1. conseguir/crear imagen para encabezado de blog, medidas: 760px x 150px, puede ser formato jpg, gif o png, que son los formatos que reconocen y pueden mostrar los navegadores por *default*.
-2. imagen anterior llamarlo encabezado.png (cambiar la extensión segun el formato elegido) y guardarlo en la carpeta `./imgs/`
-3. en `./encabezado.php` incluir tag html `<IMG >` y poner la imagen encabezado.png como en atributo `src`, de manera que obtengas el siguiente resultado al visualizar tu pagina `./admin.php`:
-
-[screenshot]
-
 ### index.php
 
 Usando como referencia la consulta a la base de datos MySQL que se hizo en `./admin.php`, modificar `./index.php` de manera que genere el siguiente conjunto de tags HTML intermezclado con el contenido obtenido de la base de datos. El conjunto de tags se debe generar por cada registro regresado por la consulta a MySQL:
