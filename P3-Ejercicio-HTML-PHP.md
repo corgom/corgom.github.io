@@ -129,7 +129,7 @@ En [este documento][tarea-decimas-extra] esta la definición de las tablas de tu
   
   3. Si tu *login* fue exitoso, este debe redirigirte a la página `./admin.php` en donde verás el listado de los titulos de los articulos publicados o existentes en la tabla `articulo`, **que fue hasta donde llegamos en la ultima clase**.
    
-  ![Screenshot web site logued](http://i.imgur.com/DxttdzD.png)
+     ![Screenshot web site logued](http://i.imgur.com/DxttdzD.png)
 
 ### ./admin.php
 
@@ -175,7 +175,7 @@ Si tu salida html no es así, corrige o completa tu fuente `./admin.php` para qu
    </table>
    ```
 
-### index.php
+### ./index.php
 
 Usando como referencia la consulta a la base de datos MySQL que se hizo en `./admin.php`, modificar `./index.php` de manera que genere el siguiente conjunto de tags HTML intermezclado con el contenido obtenido de la base de datos:
 
