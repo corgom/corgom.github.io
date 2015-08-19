@@ -23,31 +23,19 @@ Vas a usar dos carpetas, una local y una remota, a continuación su explicación
 
 ### CARPETA DE TRABAJO
 
-Tienes una carpeta local, en disco duro o en tu memoria USB, llamada `cms`  o `cmsblog` que debe contener lo ultimo que trabajaste en clase, de ahora en adelante nos referiremos a esta carpeta como **`CARPETA DE TRABAJO`**. Esta carpeta es la misma que copias a la ruta `[UnidadDiscoDuro]\wamp\www\` y visualizas en `http://localhost/cms` usando WAMP.
+Tienes una carpeta llamada `cms`  (o `cmsblog`), que está ubicada en disco duro en la ruta `[UnidadDiscoDuro]\wamp\www\` o en tu memoria USB. La carpeta `cms` debe contener la ultima versión trabajada en clase. Nos referiremos a esta carpeta como **`CARPETA DE TRABAJO`**.
+
+Si tu carpeta está en la ruta `[UnidadDiscoDuro]\wamp\www\`, puedes visualiar tu sitio web con la URL `http://localhost/cms`. Recuerda que el servidor web (WAMP) ejecuta o procesa los scripts php antes de enviar los documentos HTML al navegador.
 
 ### CARPETA REMOTA
 
 Y tienes un carpeta en un servidor FTP que llamaremos **`CARPETA REMOTA`**. Para acceder esta carpeta requieres de un cliente FTP y de los datos de conexion que te proporcioné en alguna de las clases.
 
-Con la conexión FTP puedes subir, modificar, mover y eliminar archivos en tu `CARPETA REMOTA`.
+Con la conexión FTP **publicas** tu sitio web, ya que aquí puedes subir, modificar, mover y eliminar archivos en tu `CARPETA REMOTA`. Esto es equivalente a copiar de tu USB el directorio `cms` a la ruta de `www` de WAMP.
 
 ### WEB SITE
 
-El contenido de la `CARPETA REMOTA` puede ser visualizado vía un navegador web, usando la URL correcta, y está inicia por supuesto con `http://`. Recuerda que el servidor web ejecuta o procesa los scripts php antes de enviar los documentos HTML al navegador.
-
-
-
-3. a tu SITIO WEB Lo que subas a esta carpeta lo puedes ver vía navegador web, apuntado a ella correctamente:
-
-```
-http://[ip]/~corne/[usuario_ftp_sin_@]
-```
-
-donde `[usuario_ftp_sin_@]` se corresponde con tu usuario ftp pero sin incluir la arroba y lo que viene despues, por ejemplo para ver el sitio web de Jonatan escribimos en el navegador:
-
-```
-http://[ip]/~corne/jmunoz
-```
+Para visualizar en un *browser* tu sitio web que está contenido en la `CARPETA REMOTA` tienes que usar la URL especifica para tí. De manera general, tu URL es `http://[ip]/~corne/[usuario_ftp_sin_@]`, donde `[usuario_ftp_sin_@]` se corresponde con tu usuario ftp pero sin incluir la arroba y lo que viene despues, por ejemplo para ver el sitio web de Jonatan escribimos en el navegador `http://[ip]/~corne/jmunoz`
 
 ![Imgur](http://i.imgur.com/t3MUla6.png)
 
