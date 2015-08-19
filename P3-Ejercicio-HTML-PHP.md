@@ -6,21 +6,38 @@
 
 ## Objetivo
 
-Aplicar los conceptos y ejercicios vistos en clase sobre el tema *Desarrollo de aplicaciones web usando HTML, PHP y MySQL*, para publicar un sitio web funcional que permite crear un blog.
+Aplicar los conceptos y ejercicios vistos en clase sobre el tema *Desarrollo de aplicaciones web usando HTML, PHP y MySQL*, para **avanzar** con la publicación de un sitio web funcional que permite crear un blog.
 
 ## Instrucciones
 
 Realiza cada unos de los pasos de forma incremental segun se te indica.
 
-La conexion ftp lo puedes hacer con el cliente ftp de tu preferencia ([FileZilla][1], [CyberDuck][2], etc.). Ya se te proporcionó con anterioridad la información para hacer la conexión a tu sitio ftp, los datos mínimos requeridos son: **url del ftp** o *host*, **puerto** o *port* (default: 21), **usuario** o *user* y **contraseña** o *password*.
+La conexion ftp lo puedes hacer con el cliente ftp de tu preferencia ([FileZilla][1], [CyberDuck][2], etc.). Ya se te proporcionó con anterioridad la información para hacer la conexión a tu sitio ftp, los datos mínimos requeridos son:
+
+   * **url del ftp** o *host*
+   * **puerto** o *port* (default: 21)
+   * **usuario** o *user*
+   * y **contraseña** o *password*.
+
+Vas a usar dos carpetas, una local y una remota, a continuación su explicación.
 
 ### CARPETA DE TRABAJO
 
-Tienes una carpeta local (en tu disco duro o USB) llamada `cms`  o `cmsblog` que debe contener lo ultimo que trabajamos en clase, a esta carpeta de ahora en adelante la llamaremos **`CARPETA DE TRABAJO`** (que es la carpeta que copiabamos a la ruta `.\wamp\www\` y podíamos visualizar en `http://localhost/cms` usando WAMP).
+Tienes una carpeta local, en disco duro o en tu memoria USB, llamada `cms`  o `cmsblog` que debe contener lo ultimo que trabajaste en clase, de ahora en adelante nos referiremos a esta carpeta como **`CARPETA DE TRABAJO`**. Esta carpeta es la misma que copias a la ruta `[UnidadDiscoDuro]\wamp\www\` y visualizas en `http://localhost/cms` usando WAMP.
 
-### CARPETA PUBLICA
+### CARPETA REMOTA
 
-Y tienes un carpeta remota ftp que llamaremos **`CARPETA PUBLICA`**. Esta es la carpeta que ves cuando te conectas al servidor ftp, cuyos datos de conexion se te proporcionó en alguna de las clases. Lo que subas a esta carpeta lo puedes ver vía navegador web, apuntado a ella correctamente:
+Y tienes un carpeta en un servidor FTP que llamaremos **`CARPETA REMOTA`**. Para acceder esta carpeta requieres de un cliente FTP y de los datos de conexion que te proporcioné en alguna de las clases.
+
+Con la conexión FTP puedes subir, modificar, mover y eliminar archivos en tu `CARPETA REMOTA`.
+
+### WEB SITE
+
+El contenido de la `CARPETA REMOTA` puede ser visualizado vía un navegador web, usando la URL correcta, y está inicia por supuesto con `http://`. Recuerda que el servidor web ejecuta o procesa los scripts php antes de enviar los documentos HTML al navegador.
+
+
+
+3. a tu SITIO WEB Lo que subas a esta carpeta lo puedes ver vía navegador web, apuntado a ella correctamente:
 
 ```
 http://[ip]/~corne/[usuario_ftp_sin_@]
@@ -42,10 +59,10 @@ A la url de tu sitio web le llamaremos de ahora en adelante **`WEB SITE`**.
 
 ### ./install.php
 
-1. Borra todo el contenido que hay en tu `CARPETA PUBLICA`.
-2. Sube el **contenido** de tu `CARPETA DE TRABAJO` a la `CARPETA PUBLICA`.
+1. Borra todo el contenido que hay en tu `CARPETA REMOTA`.
+2. Sube el **contenido** de tu `CARPETA DE TRABAJO` a la `CARPETA REMOTA`.
    
-   Una vez actualizada tu `CARPETA PUBLICA`, puedes visita tu `WEB SITE`, esté será reflejo fiel de tu `CARPETA DE TRABAJO` visto en un navegador web.
+   Una vez actualizada tu `CARPETA REMOTA`, puedes visita tu `WEB SITE`, esté será reflejo fiel de tu `CARPETA DE TRABAJO` visto en un navegador web.
 3. Baja el archivo php [`install.php`][install.php] a tu `CARPETA DE TRABAJO`, como ya existe un archivo con el mismo nombre vas a tener que sobre escribir el existente, ya que este nuevo archivo `install.php` tiene correciones respecto al original.
 4. Crea las tablas que va a requerir tu sitio web usando el archivo `./install.php` recien bajado.
     1. Actualiza la sección de configuracion de conexion a tu base de datos MySQL en el archivo `./install.php`. Actualmente esa parte contiene esta información:
