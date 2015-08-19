@@ -2,7 +2,7 @@
 
 # Ejercicio
 
-**Keywords**: [HTML5][html5], form, input, post, PHP, ftp, website, url, $_POST[], issset(), [mysqli][mysqli], SQL
+**Keywords**: [HTML5][html5], form, input, post, PHP, ftp, website, url, $_POST[ ], issset(), [mysqli][mysqli], SQL
 
 ## Objetivo
 
