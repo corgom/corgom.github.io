@@ -14,10 +14,10 @@ Realiza cada unos de los pasos de forma incremental segun se te indica.
 
 La conexion ftp lo puedes hacer con el cliente ftp de tu preferencia ([FileZilla][1], [CyberDuck][2], etc.). Ya se te proporcionó con anterioridad la información para hacer la conexión a tu sitio ftp, los datos mínimos requeridos son:
 
-   * **url del ftp** o *host*
-   * **puerto** o *port* (default: 21)
-   * **usuario** o *user*
-   * y **contraseña** o *password*.
+   * **ip o url del ftp** / *host*
+   * **puerto** / *port* (default: 21)
+   * **usuario** / *user*
+   * y **contraseña** / *password*.
 
 Vas a usar dos carpetas, una local y una remota, a continuación su explicación.
 
@@ -37,7 +37,7 @@ Con la conexión FTP **publicas** tu sitio web, ya que aquí puedes subir, modif
 
 Para visualizar en un *browser* tu sitio web que está contenido en la `CARPETA REMOTA` tienes que usar la URL especifica para tí. De manera general, tu URL es `http://[ip]/~corne/[usuario_ftp_sin_@]`, donde `[usuario_ftp_sin_@]` se corresponde con tu usuario ftp pero sin incluir la arroba y lo que viene despues, por ejemplo para ver el sitio web de Jonatan escribimos en el navegador `http://[ip]/~corne/jmunoz`
 
-![Imgur](http://i.imgur.com/t3MUla6.png)
+![Screenshot raw site](http://i.imgur.com/t3MUla6.png)
 
 En el url anterior, unicamente falta sustituir `[ip]` que se corresponde con la IP del servidor ftp mencionado anteriormente.
 
@@ -49,12 +49,18 @@ A esta url le llamaremos de ahora en adelante **`WEB SITE`**.
 
 Vas a crear las tablas de tu base de datos para tu sitio web en el servidor remoto.
 
+En [este documento][tarea-decimas-extra] esta la definición de las tablas de tu base de datos y los datos de carga inicial, en caso de requerirlo mas adelante.
+
 1. Borra el archivo `./install.php` de tu `CARPETA DE TRABAJO`.
+
 2. Borra todo el contenido (archivos y subcarpetas) de tu `CARPETA REMOTA`.
+
 3. Mediante conexión FTP copia o sube todo el **contenido** (archivos y subcarpetas) de tu `CARPETA DE TRABAJO` a la `CARPETA REMOTA`.
    
    En este punto, una vez copiado todo a tu `CARPETA REMOTA`, puedes visitar tu `WEB SITE` con la URL correspondiente. Tu `WEB SITE` será reflejo fiel de tu `CARPETA DE TRABAJO` visto en un navegador web. Ahora falta crear las tablas de la base de datos para que no salgan errores al visitar paginas de tu sitio que consultan a MySQL.
+
 4. Baja el nuevo archivo php [`install.php`][install.php] a tu `CARPETA DE TRABAJO`. Este nuevo `install.php` tiene correciones respecto al original usado en clase.
+
 5. Abre en tu editor favorito el archivo `./install.php`, y actualiza la sección de configuracion de conexion a tu base de datos MySQL. Localiza estas lineas php en tu codigo:
     
    ```php
@@ -101,29 +107,33 @@ Vas a crear las tablas de tu base de datos para tu sitio web en el servidor remo
    Asegurate que los datos estén correctos. Si te marca error alguno de los ejercicios posteriores, regresa a este punto y revisa que tus datos estén correctos.
    
 6. Guarda los cambios en tu archivo `./install.php`
+
 7. Para que se creen las tablas y se carguen los registros de prueba en tu base de datos, como lo hicimos en clase, debes ejecutar el php `./install.php` en el servidor remoto, para ello has de usar la url de tu `WEB SITE` `http://[ip]/~corne/[usuario_ftp_sin_@]/install.php`
+
 8. Valida que la base de datos se haya creado correctamente:
-        1. Actualiza la configuracion de la conexion a la base de datos MySQL en el archivo `./admin.php`, usa los mismos datos de conexión a MySQL que usaste en `./install.php`:
 
-        ```php
-        <?php
+  1. Actualiza la configuracion de la conexion a la base de datos MySQL en el archivo `./admin.php`, usa los mismos datos de conexión a MySQL que usaste en `./install.php`:
 
-        $db = new mysqli('localhost', 'corne_[usuario_ftp_sin_@]', '[password_ftp]', 'corne_cmsblog_[usuario_ftp_sin_@]'); //con indicacion de nombre de base de datos
-        //$db = new mysqli('localhost', 'root', ''); //sin indicacion de nombre de base de datos
+    ```php
+    <?php
+  
+    $db = new mysqli('localhost', 'corne_[usuario_ftp_sin_@]', '[password_ftp]', 'corne_cmsblog_[usuario_ftp_sin_@]'); //con indicacion de nombre de base de datos
+    //$db = new mysqli('localhost', 'root', ''); //sin indicacion de nombre de base de datos
+  
+    if($db->connect_errno > 0){
+        die('No es posible conectarse a la base de datos [' . $db->connect_error . ']');
+    }
+    ```
 
-        if($db->connect_errno > 0){
-            die('No es posible conectarse a la base de datos [' . $db->connect_error . ']');
-        }
-        ```
+  2. Ahora ve a tu sitio web `http://[ip]/~corne/[usuario_ftp_sin_@]/` y logueate en la correspondiente pantalla de *login*.
+  
+  3. Si tu *login* fue exitoso, este debe redirigirte a la página `./admin.php` en donde verás el listado de los titulos de los articulos publicados o existentes en la tabla `articulo`, **que fue hasta donde llegamos en la ultima clase**.
+   
+  ![Screenshot web site logued](http://i.imgur.com/DxttdzD.png)
 
-        2. Ahora ve a tu sitio web `http://[ip]/~corne/[usuario_ftp_sin_@]/` y logueate en la correspondiente pantalla de *login*.
-        3. Si tu *login* fue exitoso, este debe redirigirte a la página `./admin.php` en donde verás el listado de los titulos de los articulos publicados o existentes en la tabla `articulo`, **que fue hasta donde llegamos en la ultima clase**.
-        
-           En [este documento][tarea-decimas-extra] esta la definicion de las tablas de tu base de datos y los datos de carga inicial.
-        
 ### ./admin.php
 
-En `./admin.php` actualmente generamos con php una tabla html que contiene los datos consultados de la tabla `articulo`, y mostramos dos columnas que son `id` y `titulo`. El codigo html generado por php debe ser parecido a (quizás varie en los saltos de linea, pero los tags deben generarse en el orden indicado):
+En `./admin.php` actualmente generamos con php una tabla html que contiene los datos consultados de la tabla `articulo`, y mostramos dos columnas que son `id` y `titulo`. El codigo html generado por php debe ser parecido a (quizás varie en los saltos de linea o espacios, pero los tags deben generarse en el orden indicado):
 
 ```html
 <table>
