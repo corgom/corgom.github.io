@@ -155,7 +155,7 @@ En `./admin.php` actualmente generamos con php una tabla html que contiene los d
 
 Si tu salida html no es así, corrige o completa tu fuente `./admin.php` para que tenga la salida de tags como se indicó anteriormente.
 
-1. El ejercicio consiste en modificar el fuente `./admin.php` de manera que la salida html sea:
+1. El ejercicio consiste en modificar el fuente `./admin.php` de manera que la salida html ahora sea:
 
    ```html
    <table>
@@ -177,18 +177,39 @@ Si tu salida html no es así, corrige o completa tu fuente `./admin.php` para qu
 
 ### index.php
 
-Usando como referencia la consulta a la base de datos MySQL que se hizo en `./admin.php`, modificar `./index.php` de manera que genere el siguiente conjunto de tags HTML intermezclado con el contenido obtenido de la base de datos. El conjunto de tags se debe generar por cada registro regresado por la consulta a MySQL:
+Usando como referencia la consulta a la base de datos MySQL que se hizo en `./admin.php`, modificar `./index.php` de manera que genere el siguiente conjunto de tags HTML intermezclado con el contenido obtenido de la base de datos:
 
 ```html
 <h2>[Titulo del articulo]</h2>
-<h3>por: [Autor del articulo]</h3>
+<h3>por: [Usuario creó el articulo]</h3>
 <pre><code>
-[texto del articulo]
+[Texto del articulo]
 </code></pre>
 ```
 
-donde dice `[Titulo del articulo]`, `[Autor del articulo]` y `[texto del articulo]` ahí debe aparecer los valores recuperados de la base de datos.
+donde dice `[Titulo del articulo]`, `[Usuario creó el articulo]` y `[Texto del articulo]` ahí debe aparecer los valores recuperados de la base de datos.
 
+ El conjunto de tags se debe generar por cada registro regresado por la consulta a MySQL, es decir, si por ejemplo mostraramos los 3 primeros registros la salida HTML sería:
+ 
+```html
+<h2>silicon valley</h2>
+<h3>por: steve</h3>
+<pre><code>
+Lorem ipsum ad his blandit partiendo, eum...
+</code></pre>
+
+<h2>ipad</h2>
+<h3>por: steve</h3>
+<pre><code>
+Lorem ipsum ad his blandit partiendo, eum...
+</code></pre>
+
+<h2>dia de la marmota</h2>
+<h3>por: murray</h3>
+<pre><code>
+Lorem ipsum ad his blandit partiendo, eum...
+</code></pre>
+```
 
 
 [1]: https://filezilla-project.org/ "FileZilla"
