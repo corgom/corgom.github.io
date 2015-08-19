@@ -19,15 +19,28 @@ La conexion ftp lo puedes hacer con el cliente ftp de tu preferencia ([FileZilla
 ### ./install.php
 
 1. Borra todo el contenido que tenga tu directorio FTP, y sube el *contenido* de la carpeta actual llamado **cms** o **cmsblog** que hemos estado trabajando en clase a tu directorio FTP.
-2. Con el paso anterior has actualizado tu sitio web online.
-3. Instala/crea la base de datos requerido por tu sitio web:
-    1. Actualiza los datos de configuracion de conexion a tu base de datos MySQL en el archivo `./install.php`
+   Lo anterior te debe permitir visitar tu sitio web apuntando a:
+
+   ```
+   http://[ip_sitio_web]/~corne/[tu_usuario]
+   ```
+
+2. Instala/crea la base de datos requerido por tu sitio web usando el archivo `./install.php`
+    1. Actualiza la sección de configuracion de conexion a tu base de datos MySQL en el archivo `./install.php` con tus datos de conexion:
     
        ```php
-       $host = "host";
-       $pass = "pass";
+        if (isset($_POST["install"])){
+
+            $dbHost     = "localhost"; # url o direccion de la base ...
+            $dbUsuario  = "root";
+            $dbPassword = "";
+            $dbNombre   = "cmsblog"; # nombre de la base de datos
+
+            ...
        ```
        
+       Los datos de conexion usuario y password se te proporciona en un correo aparte.
+
     2. Asegurate que los datos son correctos, porque sino, marcará error el siguiente paso.
     3. Ejecuta el php `./install.php` (apunta al archivo en un navegador mediante su URL online) para que se realice la creación de la base de datos, tablas y datos de carga inicial.
     3. Y ahora para validar la correcta creacion de la base de datos:
