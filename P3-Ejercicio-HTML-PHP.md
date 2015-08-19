@@ -35,7 +35,13 @@ Con la conexión FTP **publicas** tu sitio web, ya que aquí puedes subir, modif
 
 ### WEB SITE
 
-Para visualizar en un *browser* tu sitio web que está contenido en la `CARPETA REMOTA` tienes que usar la URL especifica para tí. De manera general, tu URL es `http://[ip]/~corne/[usuario_ftp_sin_@]`, donde `[usuario_ftp_sin_@]` se corresponde con tu usuario ftp pero sin incluir la arroba y lo que viene despues, por ejemplo para ver el sitio web de Jonatan escribimos en el navegador `http://[ip]/~corne/jmunoz`
+Para visualizar en un *browser* tu sitio web que está contenido en la `CARPETA REMOTA` tienes que usar la URL especifica para tí. De manera general, tu URL es
+
+```
+http://[ip]/~corne/[usuario_ftp_sin_@]
+```
+
+donde `[usuario_ftp_sin_@]` se corresponde con tu usuario ftp pero sin incluir la arroba y lo que viene despues, por ejemplo para ver el sitio web de Jonatan escribimos en el navegador `http://[ip]/~corne/jmunoz`
 
 ![Screenshot raw site](http://i.imgur.com/t3MUla6.png)
 
