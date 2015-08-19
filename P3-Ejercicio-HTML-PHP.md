@@ -41,65 +41,68 @@ Para visualizar en un *browser* tu sitio web que está contenido en la `CARPETA 
 
 En el url anterior, unicamente falta sustituir `[ip]` que se corresponde con la IP del servidor ftp mencionado anteriormente.
 
-A la url de tu sitio web le llamaremos de ahora en adelante **`WEB SITE`**.
+A esta url le llamaremos de ahora en adelante **`WEB SITE`**.
    
 ## Ejercicios
 
 ### ./install.php
 
-1. Borra todo el contenido que hay en tu `CARPETA REMOTA`.
-2. Sube el **contenido** de tu `CARPETA DE TRABAJO` a la `CARPETA REMOTA`.
+Vas a crear las tablas de tu base de datos para tu sitio web en el servidor remoto.
+
+1. Borra el archivo `./install.php` de tu `CARPETA DE TRABAJO`.
+2. Borra todo el contenido (archivos y subcarpetas) de tu `CARPETA REMOTA`.
+3. Mediante conexión FTP copia o sube todo el **contenido** (archivos y subcarpetas) de tu `CARPETA DE TRABAJO` a la `CARPETA REMOTA`.
    
-   Una vez actualizada tu `CARPETA REMOTA`, puedes visita tu `WEB SITE`, esté será reflejo fiel de tu `CARPETA DE TRABAJO` visto en un navegador web.
-3. Baja el archivo php [`install.php`][install.php] a tu `CARPETA DE TRABAJO`, como ya existe un archivo con el mismo nombre vas a tener que sobre escribir el existente, ya que este nuevo archivo `install.php` tiene correciones respecto al original.
-4. Crea las tablas que va a requerir tu sitio web usando el archivo `./install.php` recien bajado.
-    1. Actualiza la sección de configuracion de conexion a tu base de datos MySQL en el archivo `./install.php`. Actualmente esa parte contiene esta información:
+   En este punto, una vez copiado todo a tu `CARPETA REMOTA`, puedes visitar tu `WEB SITE` con la URL correspondiente. Tu `WEB SITE` será reflejo fiel de tu `CARPETA DE TRABAJO` visto en un navegador web. Ahora falta crear las tablas de la base de datos para que no salgan errores al visitar paginas de tu sitio que consultan a MySQL.
+4. Baja el nuevo archivo php [`install.php`][install.php] a tu `CARPETA DE TRABAJO`. Este nuevo `install.php` tiene correciones respecto al original usado en clase.
+5. Abre en tu editor favorito el archivo `./install.php`, y actualiza la sección de configuracion de conexion a tu base de datos MySQL. Localiza estas lineas php en tu codigo:
     
-       ```php
-        if (isset($_POST["install"])){
+   ```php
+    if (isset($_POST["install"])){
 
-            $dbHost     = "localhost"; # url o direccion de la base ...
-            $dbUsuario  = "root";
-            $dbPassword = "";
-            $dbNombre   = "cmsblog"; # nombre de la base de datos
+        $dbHost     = "localhost"; # url o direccion de la base ...
+        $dbUsuario  = "root";
+        $dbPassword = "";
+        $dbNombre   = "cmsblog"; # nombre de la base de datos
 
-            ...
-       ```
+        ...
+   ```
        
-       Los parametros de conexion actualizados con tus datos queda como sigue:
+   Los datos de conexion que ahí tiene son los que usaste en la clase. Los parametros de conexión para **tu base** de datos MySQL en el servidor remoto es como sigue:
 
-       ```php
-        if (isset($_POST["install"])){
+   ```php
+    if (isset($_POST["install"])){
 
-            $dbHost     = "localhost"; # url o direccion de la base ...
-            $dbUsuario  = "corne_[usuario_ftp_sin_@]";
-            $dbPassword = "[password_ftp]";
-            $dbNombre   = "corne_cmsblog_[usuario_ftp_sin_@]"; # nombre de la base de datos
+        $dbHost     = "localhost"; # url o direccion de la base ...
+        $dbUsuario  = "corne_[usuario_ftp_sin_@]";
+        $dbPassword = "[password_ftp]";
+        $dbNombre   = "corne_cmsblog_[usuario_ftp_sin_@]"; # nombre de la base de datos
 
-            ...
-       ```
+        ...
+   ```
+  
+   Tienes que sustituir `[usuario_ftp_sin_@]` y `[password_ftp]` con sus valores respectivos. El valor de `$dbHost` se queda como `localhost` porque la base de datos MySQL que vas a usar es *local* al servidor en donde se ejecutan tus páginas PHP.
 
-       donde hay que sustituir `[usuario_ftp_sin_@]` y `[password_ftp]` con sus valores respectivos. el valor de `$dbHost` se queda como `localhost` porque la base de datos MySQL que vas a usar es *local* al servidor en donde se ejecutan tus páginas PHP.
+   Siguiendo con el ejemplo de Jonatan, tendríamos nuestra sección de configuración actualizado así:
 
-       Siguiendo con el ejemplo de Jonatan, tendríamos nuestra sección de configuración actualizado así:
+   ```php
+    if (isset($_POST["install"])){
 
-       ```php
-        if (isset($_POST["install"])){
+        $dbHost     = "localhost"; # url o direccion de la base ...
+        $dbUsuario  = "corne_jmunoz";
+        $dbPassword = "123456";
+        $dbNombre   = "corne_cmsblog_jmunoz"; # nombre de la base de datos
 
-            $dbHost     = "localhost"; # url o direccion de la base ...
-            $dbUsuario  = "corne_jmunoz";
-            $dbPassword = "123456";
-            $dbNombre   = "corne_cmsblog_jmunoz"; # nombre de la base de datos
+        ...
+   ```
 
-            ...
-       ```
+   Obviamente, el password no es el real.
 
-       Obvio, el password no es el real.
-
-       Asegurate que los datos estén correctos. Si te marca error alguno de los ejercicios posteriores, regresa a este punto y revisa que tus datos estén correctos.
-
-    2. Para ejecutar la instalacion, hay que *correr* el php `./install.php` en el servidor (usando la url de tu `WEB SITE`) para que se creen las tablas y y se carguen registros iniciales en tu base de datos, como lo hicimos en clase, la diferencia ahora es que no es `http://localhost/cmsblog/install.php`, sino que hay que apuntar ahora a la url `http://[ip]/~corne/[usuario_ftp_sin_@]/install.php`
-    3. Valida que la base de datos se haya creado correctamente:
+   Asegurate que los datos estén correctos. Si te marca error alguno de los ejercicios posteriores, regresa a este punto y revisa que tus datos estén correctos.
+   
+6. Guarda los cambios en tu archivo `./install.php`
+7. Para que se creen las tablas y se carguen los registros de prueba en tu base de datos, como lo hicimos en clase, debes ejecutar el php `./install.php` en el servidor remoto, para ello has de usar la url de tu `WEB SITE` `http://[ip]/~corne/[usuario_ftp_sin_@]/install.php`
+8. Valida que la base de datos se haya creado correctamente:
         1. Actualiza la configuracion de la conexion a la base de datos MySQL en el archivo `./admin.php`, usa los mismos datos de conexión a MySQL que usaste en `./install.php`:
 
         ```php
