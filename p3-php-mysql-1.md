@@ -12,14 +12,14 @@
 1. Abrir en navegador web (firefox o chrome) tu sitio web, que será
     la url [http://localhost/cms/](http://localhost/cms/)
 1. Abrir en otra pestaña del navegador la interfaz web para MySQL <a href="http://localhost/phpmyadmin/">phpMyAdmin</a>
-1. Bajar <a href="">archivo php</a> que crea la base de datos y tablas basicas para nuestro sitio web
-   1. Ejecutar el script en una pestaña nueva en el navegador web (p.e. http://localhost/cms/install-db-cms.php)
+1. Bajar <a href="https://raw.githubusercontent.com/corgom/corgom.github.io/master/dev-mysql/install-db-cms/install.php">archivo php</a> que crea la base de datos y tablas basicas para nuestro sitio web
+   1. Ejecutar el script en una pestaña nueva en el navegador web (p.e. http://localhost/cms/install.php)
 
 ## MySQLi
 
 De las 3 APIs disponibles para conectarse a MySQL desde PHP vamos a usar **mysqli**
 
-Veamos primero codigo de conexion valida php a mysql:
+Codigo de conexion valida php a mysql:
 
 ```php
 <?php
