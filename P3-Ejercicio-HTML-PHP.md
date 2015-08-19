@@ -36,19 +36,19 @@ http://[ip]/~corne/jmunoz
 
 En el url anterior, unicamente falta sustituir `[ip]` que se corresponde con la IP del servidor ftp mencionado anteriormente.
 
-A la url de tu sitio web le llamaremos de ahora en adelante `WEB SITE`.
+A la url de tu sitio web le llamaremos de ahora en adelante **`WEB SITE`**.
    
 ## Ejercicios
 
 ### ./install.php
 
-1. Borra todo el contenido de tu `CARPETA PUBLICA`, y sube el **contenido** de tu `CARPETA DE TRABAJO` a dicha `CARPETA PUBLICA`.
-   Una vez hecho lo anterior, visita tu `WEB SITE`, esté será reflejo fiel de tu `CARPETA DE TRABAJO` visto en un navegador web.
-
-2. Baja el archivo php [`install.php`][install.php] a tu `CARPETA DE TRABAJO`, como ya existe un archivo con el mismo nombre, sobre escribe el existente, ya que este nuevo archivo `install.php` tiene algunas correciones respecto al original.
-
-3. Instala o crea las tablas que va a requerir tu sitio web usando el archivo `./install.php` recien bajado.
-    1. Actualiza la sección de configuracion de conexion a tu base de datos MySQL en el archivo `./install.php` con tus datos de conexion. Actualmente esa parte contiene esta información:
+1. Borra todo el contenido que hay en tu `CARPETA PUBLICA`.
+2. Sube el **contenido** de tu `CARPETA DE TRABAJO` a la `CARPETA PUBLICA`.
+   
+   Una vez actualizada tu `CARPETA PUBLICA`, puedes visita tu `WEB SITE`, esté será reflejo fiel de tu `CARPETA DE TRABAJO` visto en un navegador web.
+3. Baja el archivo php [`install.php`][install.php] a tu `CARPETA DE TRABAJO`, como ya existe un archivo con el mismo nombre vas a tener que sobre escribir el existente, ya que este nuevo archivo `install.php` tiene correciones respecto al original.
+4. Crea las tablas que va a requerir tu sitio web usando el archivo `./install.php` recien bajado.
+    1. Actualiza la sección de configuracion de conexion a tu base de datos MySQL en el archivo `./install.php`. Actualmente esa parte contiene esta información:
     
        ```php
         if (isset($_POST["install"])){
@@ -93,8 +93,8 @@ A la url de tu sitio web le llamaremos de ahora en adelante `WEB SITE`.
 
        Asegurate que los datos estén correctos. Si te marca error alguno de los ejercicios posteriores, regresa a este punto y revisa que tus datos estén correctos.
 
-    2. Para ejecutar la instalacion, hay que *correr* el php `./install.php` en el servidor (usando su url completa) para que se realice la creación de la base de datos, tablas y datos de carga inicial, como lo hicimos en clase, la diferencia ahora es que no es `http://localhost/cmsblog/install.php`, sino que hay que apuntar ahora a la url correspondiente: `http://[ip]/~corne/[usuario_ftp_sin_@]/install.php`
-    3. Ahora valida que la base de datos se haya creado correctamente:
+    2. Para ejecutar la instalacion, hay que *correr* el php `./install.php` en el servidor (usando la url de tu `WEB SITE`) para que se creen las tablas y y se carguen registros iniciales en tu base de datos, como lo hicimos en clase, la diferencia ahora es que no es `http://localhost/cmsblog/install.php`, sino que hay que apuntar ahora a la url `http://[ip]/~corne/[usuario_ftp_sin_@]/install.php`
+    3. Valida que la base de datos se haya creado correctamente:
         1. Actualiza la configuracion de la conexion a la base de datos MySQL en el archivo `./admin.php`, usa los mismos datos de conexión a MySQL que usaste en `./install.php`:
 
         ```php
@@ -109,7 +109,9 @@ A la url de tu sitio web le llamaremos de ahora en adelante `WEB SITE`.
         ```
 
         2. Ahora ve a tu sitio web `http://[ip]/~corne/[usuario_ftp_sin_@]/` y logueate en la correspondiente pantalla de *login*.
-        3. Si tu login fue exitoso, este debe redirigirte a la pagina `./admin.php` en donde deberás ver el listado de articulos publicados por cada autor, **que fue hasta donde llegamos en la ultima clase**.
+        3. Si tu *login* fue exitoso, este debe redirigirte a la página `./admin.php` en donde verás el listado de los titulos de los articulos publicados o existentes en la tabla `articulo`, **que fue hasta donde llegamos en la ultima clase**.
+        
+           En [este documento][tarea-decimas-extra] esta la definicion de las tablas de tu base de datos y los datos de carga inicial.
         
 ### ./admin.php
 
@@ -135,7 +137,7 @@ En `./admin.php` actualmente generamos con php una tabla html que contiene los d
 
 Si tu salida html no es así, corrige o completa tu fuente `./admin.php` para que tenga la salida de tags como se indicó anteriormente.
 
-1. El ejercicio consiste en modificar el fuente `./admin.php` de manera que la salida html ahora sea:
+1. El ejercicio consiste en modificar el fuente `./admin.php` de manera que la salida html sea:
 
    ```html
    <table>
@@ -186,3 +188,4 @@ donde dice `[Titulo del articulo]`, `[Autor del articulo]` y `[texto del articul
 [html5]: http://www.axtro.es/2011/1/29/12236/manual-de-html5-en-espanol---1-de-3 "HTML 5"
 [mysqli]: http://codular.com/php-mysqli "MySQL > mysqli"
 [install.php]: http://corgom.github.io/resources/install.php "Install PHP-MySQL"
+[tarea-decimas-extra]: https://github.com/corgom/corgom.github.io/blob/master/P3-Tarea-MySQL-Extra.md "Puntos Extra"
